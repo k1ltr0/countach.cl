@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-cover bg-center bg-no-repeat text-gray-900 flex flex-col items-center justify-between h-screen" style="background-image: url('./img/background.png');">
+
+<body class="bg-cover bg-center bg-no-repeat text-gray-900 flex flex-col items-center justify-between h-screen"
+    style="background-image: url('./img/background.png');">
 
     <!-- Header with logo centered horizontally -->
     <header class="w-full flex justify-center items-center p-4 fixed top-0 left-0 right-0">
-        <img src="./img/logo.png" alt="Countach Logo" class="h-12" style="height: 100px;" >
+        <img src="./img/logo.png" alt="Countach Logo" class="h-12" style="height: 100px;">
     </header>
 
     <div class="text-center max-w-lg mx-auto mt-40">
@@ -21,27 +24,35 @@
         <div id="countdown" class="flex justify-center space-x-4 mb-8">
             <div class="bg-white bg-opacity-75 p-4 rounded">
                 <span id="days" class="text-3xl font-bold" style="color: #333;">0</span>
-                <p style="color: #555;">Days</p>
+                <p style="color: #555;">Días</p>
             </div>
             <div class="bg-white bg-opacity-75 p-4 rounded">
                 <span id="hours" class="text-3xl font-bold" style="color: #333;">0</span>
-                <p style="color: #555;">Hours</p>
+                <p style="color: #555;">Horas</p>
             </div>
             <div class="bg-white bg-opacity-75 p-4 rounded">
                 <span id="minutes" class="text-3xl font-bold" style="color: #333;">0</span>
-                <p style="color: #555;">Minutes</p>
+                <p style="color: #555;">Minutos</p>
             </div>
             <div class="bg-white bg-opacity-75 p-4 rounded">
                 <span id="seconds" class="text-3xl font-bold" style="color: #333;">0</span>
-                <p style="color: #555;">Seconds</p>
+                <p style="color: #555;">Segundos</p>
             </div>
         </div>
 
-        <form action="https://YOUR-MAILCHIMP-FORM-URL" method="POST" class="space-y-4">
-            <input type="text" name="NAME" placeholder="Nombre" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
-            <input type="email" name="EMAIL" placeholder="Correo Electrónico" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
-            <input type="tel" name="PHONE" placeholder="Teléfono" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
-            <textarea name="MESSAGE" placeholder="Mensaje" rows="4" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;"></textarea>
+        <form id="contactForm" class="space-y-4">
+            <input type="text" name="FNAME" placeholder="Nombre"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;">
+            <input type="email" name="EMAIL" placeholder="Correo Electrónico"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;">
+            <input type="tel" name="PHONE" placeholder="Teléfono"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;">
+            <textarea name="MMERGE7" placeholder="Mensaje" rows="4"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;"></textarea>
             <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded w-full">Enviar</button>
         </form>
 
@@ -57,7 +68,32 @@
         <!-- <p>&copy; 2024 Free HTML5. All Rights Reserved. Designed by FreeHTML5.co Demo Images: Unsplash</p> -->
     </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded shadow-lg hidden">
+        Form submitted successfully!
+    </div>
+
     <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const formData = new FormData(this);
+
+            fetch('https://maxshine.us22.list-manage.com/subscribe/post?u=4c0511c419581f5b8be532fda&id=416cd891b8&f_id=004ed1e1f0', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+            }).catch(error => {
+            });
+
+            // Replace the form content with a success message
+            document.getElementById('contactForm').innerHTML = `
+            <div class="p-4 rounded">
+                <p>¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                <a href="./" >Volver al inicio</a>
+            </div>`;
+        });
+
         function updateCountdown() {
             const christmasDate = new Date('December 25, 2024 00:00:00').getTime();
             const now = new Date().getTime();
@@ -82,4 +118,5 @@
         const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 </body>
+
 </html>
