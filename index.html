@@ -37,11 +37,12 @@
             </div>
         </div>
 
-        <form action="https://YOUR-MAILCHIMP-FORM-URL" method="POST" class="flex">
-            <input type="email" name="EMAIL" placeholder="Obtén notificaciones al email"
-                   class="p-2 rounded-l w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
-                   style="border: 1px solid #ccc;">
-            <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded-r">Send</button>
+        <form action="https://YOUR-MAILCHIMP-FORM-URL" method="POST" class="space-y-4">
+            <input type="text" name="NAME" placeholder="Nombre" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
+            <input type="email" name="EMAIL" placeholder="Correo Electrónico" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
+            <input type="tel" name="PHONE" placeholder="Teléfono" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;">
+            <textarea name="MESSAGE" placeholder="Mensaje" rows="4" class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400" style="border: 1px solid #ccc;"></textarea>
+            <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded w-full">Enviar</button>
         </form>
 
         <div class="mt-8">
