@@ -158,20 +158,29 @@
         </div> -->
 
         <form id="contactForm" class="space-y-4 pl-1 pr-1">
-            <input type="text" name="FNAME" placeholder="Nombre"
+            <input type="text" name="FNAME" id="name" placeholder="Nombre"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <input type="email" name="EMAIL" placeholder="Correo Electrónico"
+            <p id="nameError" style="margin-top: 0px;"  class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa tu nombre.</p>
+
+            <input type="email" name="EMAIL" id="email" placeholder="Correo Electrónico"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <input type="tel" name="PHONE" placeholder="Teléfono"
+            <p id="emailError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un correo electrónico válido.</p>
+
+            <input type="tel" name="PHONE" id="phone" placeholder="Teléfono"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <textarea name="MMERGE7" placeholder="Mensaje" rows="4"
+            <p id="phoneError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un número de teléfono válido.</p>
+
+            <textarea name="MMERGE7" id="message" placeholder="Mensaje" rows="4"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;"></textarea>
+            <p id="messageError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un mensaje.</p>
+
             <button type="submit" class="hover:bg-red-800 text-white p-2 rounded w-full" style="background-color: #ff2121;">Enviar</button>
         </form>
+
 
         <div class="mt-8 icon-list" style="margin-left: auto; margin-right: auto; width: fit-content;">
             <a href="#" style=""><img src="./img/1.png"></a>
@@ -197,53 +206,77 @@
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded shadow-lg hidden">
-        Form submitted successfully!
+        Formulario enviado con éxito!
     </div>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent the form from submitting the traditional way
 
-            const formData = new FormData(this);
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            fetch('https://maxshine.us22.list-manage.com/subscribe/post?u=4c0511c419581f5b8be532fda&id=416cd891b8&f_id=004ed1e1f0', {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-            }).catch(error => {
-            });
+            let isValid = true;
 
-            // Replace the form content with a success message
-            document.getElementById('contactForm').innerHTML = `
-            <div class="p-4 rounded">
-                <p>¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
-                <a href="./" >Volver al inicio</a>
-            </div>`;
-        });
-
-        function updateCountdown() {
-            const christmasDate = new Date('December 25, 2024 00:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = christmasDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById('countdown').innerHTML = "<p class='text-3xl font-bold' style='color: #333;'>Merry Christmas!</p>";
+            // Name validation
+            if (name === "") {
+                document.getElementById('nameError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('nameError').classList.add('hidden');
             }
-        }
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('emailError').classList.add('hidden');
+            }
+
+            // Phone validation (example pattern for a 9-digit phone number)
+            const phonePattern = /^[\d\s\-+()]{7,}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phoneError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').classList.add('hidden');
+            }
+
+            // Message validation
+            if (message === "") {
+                document.getElementById('messageError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('messageError').classList.add('hidden');
+            }
+
+            // If all fields are valid, submit the form
+            if (isValid) {
+                const formData = new FormData(this);
+
+                fetch('https://maxshine.us22.list-manage.com/subscribe/post?u=4c0511c419581f5b8be532fda&id=416cd891b8&f_id=004ed1e1f0', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    // Handle success
+                }).catch(error => {
+                    // Handle error
+                });
+
+                // Replace the form content with a success message
+                document.getElementById('contactForm').innerHTML = `
+                <div class="p-4 rounded">
+                    <p>¡Formulario enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                    <a href="./">Volver al inicio</a>
+                </div>`;
+            }
+        });
     </script>
+
 </body>
 
 </html>
