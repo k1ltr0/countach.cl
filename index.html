@@ -13,15 +13,17 @@
     style="background-image: url('./img/background.png');">
 
     <!-- Header with logo centered horizontally -->
-    <header class="w-full flex justify-center items-center p-4 fixed top-0 left-0 right-0">
+    <header class="w-full flex justify-center items-center p-4 fixed top-4 left-0 right-0">
         <img src="./img/logo.png" alt="Countach Logo" class="h-12" style="height: 100px;">
     </header>
 
     <div class="text-center max-w-lg mx-auto mt-40">
-        <h1 class="text-4xl md:text-3xl font-bold" style="color: #333;">Pronto!</h1>
-        <p class="mb-10" style="color: #555;">Puedes conectar con nosotros mientras tanto.</p>
+        <h1 class="text-4xl md:text-3xl font-bold" style="color: #737277; font-size: 1.6rem;">¡Estamos renovando nuestra imagen!</h1>
+        <p class="mb-2 mt-3" style="color: #737277; font-size: 0.85rem;">Estamos emocionados de anunciar que estamos en proceso de actualizar nuestra imagen y pronto lanzaremos nuestra nueva página web.</p>
+        <p class="mb-3" style="color: #737277; font-size: 0.85rem;">Mientras tanto, seguimos aquí para atenderte. Si necesitas ponerte en contacto con nosotros, por favor, rellena el formulario a continuación o llámanos directamente.</p>
+        <p class="mb-6" style="color: #737277; font-size: 0.85rem; font-weight: bold;">¡Gracias por tu paciencia y sigamos construyendo marcas juntos!</p>
 
-        <div id="countdown" class="flex justify-center space-x-4 mb-8">
+        <!-- <div id="countdown" class="flex justify-center space-x-4 mb-8">
             <div class="bg-white bg-opacity-75 p-4 rounded">
                 <span id="days" class="text-3xl font-bold" style="color: #333;">0</span>
                 <p style="color: #555;">Días</p>
@@ -38,9 +40,9 @@
                 <span id="seconds" class="text-3xl font-bold" style="color: #333;">0</span>
                 <p style="color: #555;">Segundos</p>
             </div>
-        </div>
+        </div> -->
 
-        <form id="contactForm" class="space-y-4">
+        <form id="contactForm" class="space-y-4 pl-1 pr-1">
             <input type="text" name="FNAME" placeholder="Nombre"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
@@ -53,15 +55,25 @@
             <textarea name="MMERGE7" placeholder="Mensaje" rows="4"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;"></textarea>
-            <button type="submit" class="bg-red-600 hover:bg-red-800 text-white p-2 rounded w-full">Enviar</button>
+            <button type="submit" class="hover:bg-red-800 text-white p-2 rounded w-full" style="background-color: #ff2121;">Enviar</button>
         </form>
 
-        <div class="mt-8">
-            <a href="#" class="text-red-600 mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-red-600 mx-2"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-red-600 mx-2"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="text-red-600 mx-2"><i class="fab fa-dribbble"></i></a>
+        <div class="mt-8" style="margin-left: auto; margin-right: auto; width: fit-content;">
+            <a href="#" style="float: left;width: 46px;"><img src="./img/1.png"></a>
+            <a href="#" style="float: left;width: 56px;"><img src="./img/2.png"></a>
+            <a href="#" style="float: left;width: 54px;"><img src="./img/3.png"></a>
+            <a href="#" style="float: left;width: 40px;"><img src="./img/4.png"></a>
+            <a href="#" style="float: left;width: 74px;"><img src="./img/5.png"></a>
+            <a href="#" style="float: left;width: 40px;"><img src="./img/6.png"></a>
+            <a href="#" style="float: left;width: 66px;"><img src="./img/7.png"></a>
+            <a href="#" style="float: left;width: 36px;"><img src="./img/8.png"></a>
+            <a href="#" style="float: left;width: 59px;"><img src="./img/9.png"></a>
         </div>
+
+        <div style="clear: both;" ></div>
+
+        <p class="mb-1 mt-8" style="color: #737277; font-size: 0.85rem;">Dirección: Av. Isidora Goyenechea 3642, Of 1001, Las Condes, Santiago de Chile</p>
+        <p class="mb-1" style="color: #737277; font-size: 0.85rem;">Teléfono: (+569) 22417091</p>
     </div>
 
     <footer class="text-gray-500 text-sm mt-10">
