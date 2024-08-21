@@ -7,21 +7,136 @@
     <title>Pronto</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+
+        * {
+            color: #737277;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            font-size: .85rem;
+        }
+
+        input, textarea, button {
+            font-size: 0.8rem;
+        }
+
+        .icon-list a {
+            float: left;
+        }
+
+        .icon-list a:nth-child(1) {
+            width: 46px;
+            padding-top: 3px;
+        }
+
+        .icon-list a:nth-child(2) {
+            width: 56px;
+        }
+
+        .icon-list a:nth-child(3) {
+            width: 54px;
+            padding-top: 3px;
+        }
+
+        .icon-list a:nth-child(4) {
+            width: 40px;
+            padding-top: 3px;
+        }
+
+        .icon-list a:nth-child(5) {
+            width: 74px;
+        }
+
+        .icon-list a:nth-child(6) {
+            width: 40px;
+            padding-top: 3px;
+        }
+
+
+        .icon-list a:nth-child(7) {
+            width: 66px;
+        }
+
+        .icon-list a:nth-child(8) {
+            width: 36px;
+            padding-top: 3px;
+        }
+
+        .icon-list a:nth-child(9) {
+            width: 59px;
+        }
+
+        @media screen and (max-width: 640px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: .65rem;
+            }
+
+            .address {
+                font-size: 0.55rem;
+            }
+
+            .icon-list a:nth-child(1) {
+                width: 28px;
+            }
+
+            .icon-list a:nth-child(2) {
+                width: 40px;
+            }
+
+            .icon-list a:nth-child(3) {
+                width: 36px;
+            }
+
+            .icon-list a:nth-child(4) {
+                width: 22px;
+            }
+
+            .icon-list a:nth-child(5) {
+                width: 56px;
+            }
+
+            .icon-list a:nth-child(6) {
+                width: 22px;
+            }
+
+
+            .icon-list a:nth-child(7) {
+                width: 46px;
+            }
+
+            .icon-list a:nth-child(8) {
+                width: 18px;
+            }
+
+            .icon-list a:nth-child(9) {
+                width: 41px;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-cover bg-center bg-no-repeat text-gray-900 flex flex-col items-center justify-between h-screen"
-    style="background-image: url('./img/background.png');">
+<body class="bg-cover bg-center bg-no-repeat text-gray-900 m-2"
+    style="background-image: url('./img/background.png'); min-height: 100dvh;">
 
     <!-- Header with logo centered horizontally -->
-    <header class="w-full flex justify-center items-center p-4 fixed top-4 left-0 right-0">
-        <img src="./img/logo.png" alt="Countach Logo" class="h-12" style="height: 100px;">
+    <header class="max-w-lg mx-auto w-full flex justify-center items-center p-4 mt-4 left-0 right-0">
+        <img src="./img/logo.png" alt="Countach Logo" class="h-12" style="width: 100%; height: auto;">
     </header>
 
-    <div class="text-center max-w-lg mx-auto mt-40">
-        <h1 class="text-4xl md:text-3xl font-bold" style="color: #737277; font-size: 1.6rem;">¡Estamos renovando nuestra imagen!</h1>
-        <p class="mb-2 mt-3" style="color: #737277; font-size: 0.85rem;">Estamos emocionados de anunciar que estamos en proceso de actualizar nuestra imagen y pronto lanzaremos nuestra nueva página web.</p>
-        <p class="mb-3" style="color: #737277; font-size: 0.85rem;">Mientras tanto, seguimos aquí para atenderte. Si necesitas ponerte en contacto con nosotros, por favor, rellena el formulario a continuación o llámanos directamente.</p>
-        <p class="mb-6" style="color: #737277; font-size: 0.85rem; font-weight: bold;">¡Gracias por tu paciencia y sigamos construyendo marcas juntos!</p>
+    <div class="text-center max-w-lg mx-auto">
+        <h1 class="font-bold">¡Estamos renovando nuestra imagen!</h1>
+        <p class="mb-2 mt-3" >Estamos emocionados de anunciar que estamos en proceso de actualizar nuestra imagen y pronto lanzaremos nuestra nueva página web.</p>
+        <p class="mb-3" >Mientras tanto, seguimos aquí para atenderte. Si necesitas ponerte en contacto con nosotros, por favor, rellena el formulario a continuación o llámanos directamente.</p>
+        <p class="mb-6" style="font-weight: bold;">¡Gracias por tu paciencia y sigamos construyendo marcas juntos!</p>
 
         <!-- <div id="countdown" class="flex justify-center space-x-4 mb-8">
             <div class="bg-white bg-opacity-75 p-4 rounded">
@@ -58,22 +173,22 @@
             <button type="submit" class="hover:bg-red-800 text-white p-2 rounded w-full" style="background-color: #ff2121;">Enviar</button>
         </form>
 
-        <div class="mt-8" style="margin-left: auto; margin-right: auto; width: fit-content;">
-            <a href="#" style="float: left;width: 46px;"><img src="./img/1.png"></a>
-            <a href="#" style="float: left;width: 56px;"><img src="./img/2.png"></a>
-            <a href="#" style="float: left;width: 54px;"><img src="./img/3.png"></a>
-            <a href="#" style="float: left;width: 40px;"><img src="./img/4.png"></a>
-            <a href="#" style="float: left;width: 74px;"><img src="./img/5.png"></a>
-            <a href="#" style="float: left;width: 40px;"><img src="./img/6.png"></a>
-            <a href="#" style="float: left;width: 66px;"><img src="./img/7.png"></a>
-            <a href="#" style="float: left;width: 36px;"><img src="./img/8.png"></a>
-            <a href="#" style="float: left;width: 59px;"><img src="./img/9.png"></a>
+        <div class="mt-8 icon-list" style="margin-left: auto; margin-right: auto; width: fit-content;">
+            <a href="#" style=""><img src="./img/1.png"></a>
+            <a href="#" style=""><img src="./img/2.png"></a>
+            <a href="#" style=""><img src="./img/3.png"></a>
+            <a href="#" style=""><img src="./img/4.png"></a>
+            <a href="#" style=""><img src="./img/5.png"></a>
+            <a href="#" style=""><img src="./img/6.png"></a>
+            <a href="#" style=""><img src="./img/7.png"></a>
+            <a href="#" style=""><img src="./img/8.png"></a>
+            <a href="#" style=""><img src="./img/9.png"></a>
         </div>
 
         <div style="clear: both;" ></div>
 
-        <p class="mb-1 mt-8" style="color: #737277; font-size: 0.85rem;">Dirección: Av. Isidora Goyenechea 3642, Of 1001, Las Condes, Santiago de Chile</p>
-        <p class="mb-1" style="color: #737277; font-size: 0.85rem;">Teléfono: (+569) 22417091</p>
+        <p class="mb-1 mt-7 address" >Dirección: Av. Isidora Goyenechea 3642, Of 1001, Las Condes, Santiago de Chile</p>
+        <p class="mb-1" >Teléfono: (+569) 22417091</p>
     </div>
 
     <footer class="text-gray-500 text-sm mt-10">
