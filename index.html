@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-
         * {
             color: #737277;
         }
@@ -21,7 +20,9 @@
             font-size: .85rem;
         }
 
-        input, textarea, button {
+        input,
+        textarea,
+        button {
             font-size: 0.8rem;
         }
 
@@ -134,8 +135,10 @@
 
     <div class="text-center max-w-lg mx-auto">
         <h1 class="font-bold">¡Estamos renovando nuestra imagen!</h1>
-        <p class="mb-2 mt-3" >Estamos emocionados de anunciar que estamos en proceso de actualizar nuestra imagen y pronto lanzaremos nuestra nueva página web.</p>
-        <p class="mb-3" >Mientras tanto, seguimos aquí para atenderte. Si necesitas ponerte en contacto con nosotros, por favor, rellena el formulario a continuación o llámanos directamente.</p>
+        <p class="mb-2 mt-3">Estamos emocionados de anunciar que estamos en proceso de actualizar nuestra imagen y
+            pronto lanzaremos nuestra nueva página web.</p>
+        <p class="mb-3">Mientras tanto, seguimos aquí para atenderte. Si necesitas ponerte en contacto con nosotros, por
+            favor, rellena el formulario a continuación o llámanos directamente.</p>
         <p class="mb-6" style="font-weight: bold;">¡Gracias por tu paciencia y sigamos construyendo marcas juntos!</p>
 
         <!-- <div id="countdown" class="flex justify-center space-x-4 mb-8">
@@ -158,46 +161,61 @@
         </div> -->
 
         <form id="contactForm" class="space-y-4 pl-1 pr-1">
+
             <input type="text" name="FNAME" id="name" placeholder="Nombre"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <p id="nameError" style="margin-top: 0px;"  class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa tu nombre.</p>
+            <p id="nameError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa tu nombre.</p>
+
+            <input type="text" name="LNAME" id="lastName" placeholder="Apellido"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;">
+            <p id="lastNameError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa tu apellido.</p>
+
+            <input type="text" name="ADDRESS" id="address" placeholder="Dirección"
+                class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
+                style="border: 1px solid #ccc;">
+            <p id="addressError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa tu dirección.</p>
 
             <input type="email" name="EMAIL" id="email" placeholder="Correo Electrónico"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <p id="emailError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un correo electrónico válido.</p>
+            <p id="emailError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor
+                ingresa un correo electrónico válido.</p>
 
             <input type="tel" name="PHONE" id="phone" placeholder="Teléfono"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;">
-            <p id="phoneError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un número de teléfono válido.</p>
+            <p id="phoneError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor
+                ingresa un número de teléfono válido.</p>
 
             <textarea name="MMERGE7" id="message" placeholder="Mensaje" rows="4"
                 class="p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-600 text-gray-900 placeholder-gray-400"
                 style="border: 1px solid #ccc;"></textarea>
-            <p id="messageError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor ingresa un mensaje.</p>
+            <p id="messageError" style="margin-top: 0px;" class="text-red-500 text-sm pt-0 hidden text-left">Por favor
+                ingresa un mensaje.</p>
 
-            <button type="submit" class="hover:bg-red-800 text-white p-2 rounded w-full" style="background-color: #ff2121;">Enviar</button>
+            <button type="submit" class="hover:bg-red-800 text-white p-2 rounded w-full"
+                style="background-color: #ff2121;">Enviar</button>
         </form>
 
 
         <div class="mt-8 icon-list" style="margin-left: auto; margin-right: auto; width: fit-content;">
-            <a href="#" style=""><img src="./img/1.png"></a>
-            <a href="#" style=""><img src="./img/2.png"></a>
-            <a href="#" style=""><img src="./img/3.png"></a>
-            <a href="#" style=""><img src="./img/4.png"></a>
-            <a href="#" style=""><img src="./img/5.png"></a>
-            <a href="#" style=""><img src="./img/6.png"></a>
-            <a href="#" style=""><img src="./img/7.png"></a>
-            <a href="#" style=""><img src="./img/8.png"></a>
-            <a href="#" style=""><img src="./img/9.png"></a>
+            <a href="https://meguiars.cl" target="_blank" ><img src="./img/1.png"></a>
+            <a href="#" ><img src="./img/2.png"></a>
+            <a href="#" ><img src="./img/3.png"></a>
+            <a href="#" ><img src="./img/4.png"></a>
+            <a href="http://maxshine.cl" target="_blank" ><img src="./img/5.png"></a>
+            <a href="http://slimechile.cl" target="_blank" ><img src="./img/6.png"></a>
+            <a href="#" ><img src="./img/7.png"></a>
+            <a href="#" ><img src="./img/8.png"></a>
+            <a href="#" ><img src="./img/9.png"></a>
         </div>
 
-        <div style="clear: both;" ></div>
+        <div style="clear: both;"></div>
 
-        <p class="mb-1 mt-7 address" >Dirección: Av. Isidora Goyenechea 3642, Of 1001, Las Condes, Santiago de Chile</p>
-        <p class="mb-1" >Teléfono: (+569) 22417091</p>
+        <p class="mb-1 mt-7 address">Dirección: Av. Isidora Goyenechea 3642, Of 1001, Las Condes, Santiago de Chile</p>
+        <p class="mb-1">Teléfono: (+569) 22417091</p>
     </div>
 
     <footer class="text-gray-500 text-sm mt-10">
@@ -214,6 +232,8 @@
             e.preventDefault(); // Prevent the form from submitting the traditional way
 
             const name = document.getElementById('name').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const address = document.getElementById('address').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const message = document.getElementById('message').value.trim();
@@ -226,6 +246,22 @@
                 isValid = false;
             } else {
                 document.getElementById('nameError').classList.add('hidden');
+            }
+
+            // Last Name validation
+            if (lastName === "") {
+                document.getElementById('lastNameError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('lastNameError').classList.add('hidden');
+            }
+
+            // Address validation
+            if (address === "") {
+                document.getElementById('addressError').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('addressError').classList.add('hidden');
             }
 
             // Email validation
