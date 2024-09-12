@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pronto</title>
+    <title>Countach.cl - Pronto</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
@@ -293,15 +293,32 @@
             // If all fields are valid, submit the form
             if (isValid) {
                 const formData = new FormData(this);
+                const jsonData = {
+                    "fields":{
+                        "228": formData.get("EMAIL"),
+                        "230": formData.get("MMERGE7"),
+                        "231": formData.get("FNAME"),
+                        "232": formData.get("LNAME"),
+                        "234": formData.get("FNAME"),
+                        "235": formData.get("PHONE")
+                    },
+                    "subscribe":false,
+                    "mc-SMSPHONE-ack":false
+                }
 
-                fetch('https://maxshine.us22.list-manage.com/subscribe/post?u=4c0511c419581f5b8be532fda&id=416cd891b8&f_id=004ed1e1f0', {
-                    method: 'POST',
-                    body: formData
-                }).then(response => {
-                    // Handle success
-                }).catch(error => {
-                    // Handle error
-                });
+                fetch(
+                    'https://proxy-mailchimp-66181581846.us-central1.run.app/proxy',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(jsonData)
+                    }).then(response => {
+                        // Handle success
+                    }).catch(error => {
+                        // Handle error
+                    });
 
                 // Replace the form content with a success message
                 document.getElementById('contactForm').innerHTML = `
